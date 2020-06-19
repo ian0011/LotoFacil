@@ -38,16 +38,16 @@ public class Lotofacil {
             webClient.getOptions().setJavaScriptEnabled(true);
             webClient.waitForBackgroundJavaScript(9000);
             //Faz isso aqui = Lotofácil - Loterias | Caixa 
-            System.out.println(page.getTitleText());
+            //System.out.println(page.getTitleText());
             //Pega e exibe o link
-            System.out.println(page.getUrl().toString());
+            //System.out.println(page.getUrl().toString());
 
             List<HtmlElement> spans = page.getBody().getElementsByAttribute("span", "class", "ng-binding");
             HtmlSpan concurso = (HtmlSpan) spans.get(0);
             //tipo um for
             conc = concurso.getTextContent().replaceAll("\\s+", " ").trim();
             //Exibe concurso apagar
-            System.out.println(conc);
+            //System.out.println(conc);
 
             List<Long> resultados = new ArrayList();
             List<HtmlElement> lista = page.getBody().getElementsByAttribute("table", "class", "simple-table lotofacil");
@@ -56,36 +56,33 @@ public class Lotofacil {
             cells.forEach(cell -> resultados.add(Long.parseLong(cell.getTextContent())));
             result = resultados.toString();
             resultList = resultados;
-            
-            System.out.println("Adriano ========================");
-            resultados.forEach(res -> System.out.println(res));
-            
-            
+
+            //resultados.forEach(res -> System.out.println(res));
 
             List<HtmlElement> division = page.getBody().getElementsByAttribute("div", "class", "resultado-loteria");
             List<HtmlElement> paragrafos = division.get(0).getElementsByAttribute("p", "class", "ng-binding");
             data = paragrafos.get(0).getTextContent().trim();
             data = "Data do próximo sorteio: ".concat(data.substring((data.length() - 10), data.length()));
-            System.out.println(data);
+            //System.out.println(data);
         } catch (Exception E) {
             JOptionPane.showMessageDialog(null, E);
         }
 
     }
 
-    public String pegaData()
-    {
+    public String pegaData() {
         return data;
     }
-    
-    public String pegaConcurso(){
+
+    public String pegaConcurso() {
         return conc;
     }
-    
-    public String pegaResultado(){
+
+    public String pegaResultado() {
         return result;
     }
-    public List<Long> pegaLista(){
+
+    public List<Long> pegaLista() {
         return resultList;
     }
 }
