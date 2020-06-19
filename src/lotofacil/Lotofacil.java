@@ -19,6 +19,7 @@ public class Lotofacil {
 
     public String data;
     public String conc;
+    public String result;
     //public String 
 
     public void Loteria() {
@@ -52,8 +53,10 @@ public class Lotofacil {
             HtmlTable tabela = (HtmlTable) lista.get(0);
             List<HtmlTableCell> cells = tabela.getBodies().get(0).getElementsByAttribute("td", "ng-repeat", "dezena in resultadoLinha");
             cells.forEach(cell -> resultados.add(Long.parseLong(cell.getTextContent())));
+            result = resultados.toString();
+            
             //exibe os números
-            System.out.println(resultados);
+            
 
             List<HtmlElement> division = page.getBody().getElementsByAttribute("div", "class", "resultado-loteria");
             List<HtmlElement> paragrafos = division.get(0).getElementsByAttribute("p", "class", "ng-binding");
@@ -73,6 +76,10 @@ public class Lotofacil {
     
     public String pegaConcurso(){
         return conc;
+    }
+    
+    public String pegaResultado(){
+        return result;
     }
     
 }
