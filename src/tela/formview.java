@@ -1,24 +1,25 @@
 package tela;
 
+import java.util.List;
 import lotofacil.Lotofacil;
 
 public class formview extends javax.swing.JFrame {
-    int xx,yy;
-    
-    
-    
-    
+    Lotofacil loto = new Lotofacil();
+    int xx, yy;
+    List<Long> teste1;
+    int contador = 0;
+
     public formview() {
-        
+
         initComponents();
-        Lotofacil loto = new Lotofacil();
+        
         loto.Loteria();
         txtData.setText(loto.pegaData());
         dataConc.setText(loto.pegaConcurso());
-        result.setText(loto.pegaResultado());
+        
+        teste1 = loto.pegaLista();
     }
 
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,6 +48,9 @@ public class formview extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         result = new javax.swing.JTextArea();
         dataConc = new javax.swing.JLabel();
+        lblResultado = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LOTOFÁCIL");
@@ -157,6 +161,11 @@ public class formview extends javax.swing.JFrame {
         jButton1.setBounds(20, 340, 70, 26);
 
         jButton2.setText("Verificar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton2);
         jButton2.setBounds(430, 340, 100, 26);
 
@@ -167,22 +176,39 @@ public class formview extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(290, 100, 310, 120);
+
+        dataConc.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         getContentPane().add(dataConc);
         dataConc.setBounds(10, 50, 320, 30);
+
+        lblResultado.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        lblResultado.setText("0");
+        getContentPane().add(lblResultado);
+        lblResultado.setBounds(180, 250, 100, 30);
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel3.setText("Quantidade de acertos:");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(10, 250, 180, 30);
+
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        jLabel4.setText("Resultado:");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(390, 80, 130, 19);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void formMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMousePressed
-       
+
     }//GEN-LAST:event_formMousePressed
 
     private void jPanel1MouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseDragged
-        
+
     }//GEN-LAST:event_jPanel1MouseDragged
 
     private void jPanel1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseReleased
-        
+
     }//GEN-LAST:event_jPanel1MouseReleased
 
     private void text10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_text10ActionPerformed
@@ -192,6 +218,118 @@ public class formview extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text1.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text2.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text3.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text4.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text5.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text6.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text7.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text8.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text9.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text10.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text11.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text12.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text13.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text14.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        for (int i = 0; i < 15; i++) {
+            System.out.println("Número " + i + " é " + teste1.get(i));
+            if (Long.parseLong(text15.getText())== teste1.get(i)) {
+                contador++;
+                break;
+            }
+        }
+        lblResultado.setText(String.valueOf(contador));
+        result.setText(loto.pegaResultado());
+        contador = 0;
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,8 +357,7 @@ public class formview extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(formview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
-        
+
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -235,8 +372,11 @@ public class formview extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblResultado;
     private javax.swing.JTextArea result;
     private javax.swing.JTextField text1;
     private javax.swing.JTextField text10;
