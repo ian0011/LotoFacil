@@ -1,11 +1,13 @@
 package tela;
 
+import java.awt.Color;
 import java.util.List;
 import lotofacil.Lotofacil;
 
+
 public class formview extends javax.swing.JFrame {
     Lotofacil loto = new Lotofacil();
-    int xx, yy;
+    
     List<Long> teste1;
     int contador = 0;
 
@@ -16,7 +18,7 @@ public class formview extends javax.swing.JFrame {
         loto.Loteria();
         txtData.setText(loto.pegaData());
         dataConc.setText(loto.pegaConcurso());
-        
+        jTextPane1.setText(loto.pegaLink());
         teste1 = loto.pegaLista();
     }
 
@@ -51,9 +53,11 @@ public class formview extends javax.swing.JFrame {
         lblResultado = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("LOTOFÁCIL");
+        setTitle("Lotofácil - Loterias | Caixa");
         setBackground(new java.awt.Color(50, 113, 168));
         setMaximumSize(new java.awt.Dimension(720, 480));
         setMinimumSize(new java.awt.Dimension(720, 480));
@@ -69,7 +73,7 @@ public class formview extends javax.swing.JFrame {
         txtData.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         txtData.setText("Data sorteio");
         getContentPane().add(txtData);
-        txtData.setBounds(10, 290, 385, 30);
+        txtData.setBounds(0, 250, 385, 30);
 
         jPanel1.setBackground(new java.awt.Color(50, 113, 168));
         jPanel1.setMinimumSize(new java.awt.Dimension(720, 480));
@@ -110,32 +114,32 @@ public class formview extends javax.swing.JFrame {
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 720, 30);
         getContentPane().add(text11);
-        text11.setBounds(10, 190, 50, 30);
+        text11.setBounds(10, 150, 50, 30);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("Insira os números jogados:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 70, 220, 40);
+        jLabel2.setBounds(30, 50, 220, 40);
         getContentPane().add(text14);
-        text14.setBounds(160, 190, 50, 30);
+        text14.setBounds(160, 150, 50, 30);
         getContentPane().add(text1);
-        text1.setBounds(10, 110, 50, 30);
+        text1.setBounds(10, 90, 50, 30);
         getContentPane().add(text5);
-        text5.setBounds(210, 110, 50, 30);
+        text5.setBounds(210, 90, 50, 30);
         getContentPane().add(text4);
-        text4.setBounds(160, 110, 50, 30);
+        text4.setBounds(160, 90, 50, 30);
         getContentPane().add(text2);
-        text2.setBounds(60, 110, 50, 30);
+        text2.setBounds(60, 90, 50, 30);
         getContentPane().add(text3);
-        text3.setBounds(110, 110, 50, 30);
+        text3.setBounds(110, 90, 50, 30);
         getContentPane().add(text6);
-        text6.setBounds(10, 150, 50, 30);
+        text6.setBounds(10, 120, 50, 30);
         getContentPane().add(text9);
-        text9.setBounds(160, 150, 50, 30);
+        text9.setBounds(160, 120, 50, 30);
         getContentPane().add(text7);
-        text7.setBounds(60, 150, 50, 30);
+        text7.setBounds(60, 120, 50, 30);
         getContentPane().add(text8);
-        text8.setBounds(110, 150, 50, 30);
+        text8.setBounds(110, 120, 50, 30);
 
         text10.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,13 +147,13 @@ public class formview extends javax.swing.JFrame {
             }
         });
         getContentPane().add(text10);
-        text10.setBounds(210, 150, 50, 30);
+        text10.setBounds(210, 120, 50, 30);
         getContentPane().add(text15);
-        text15.setBounds(210, 190, 50, 30);
+        text15.setBounds(210, 150, 50, 30);
         getContentPane().add(text13);
-        text13.setBounds(110, 190, 50, 30);
+        text13.setBounds(110, 150, 50, 30);
         getContentPane().add(text12);
-        text12.setBounds(60, 190, 50, 30);
+        text12.setBounds(60, 150, 50, 30);
 
         jButton1.setText("Sair");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -158,7 +162,7 @@ public class formview extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(20, 340, 70, 26);
+        jButton1.setBounds(10, 360, 70, 26);
 
         jButton2.setText("Verificar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -167,7 +171,7 @@ public class formview extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(430, 340, 100, 26);
+        jButton2.setBounds(470, 360, 100, 26);
 
         result.setEditable(false);
         result.setColumns(20);
@@ -175,26 +179,32 @@ public class formview extends javax.swing.JFrame {
         jScrollPane1.setViewportView(result);
 
         getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(290, 100, 310, 120);
+        jScrollPane1.setBounds(290, 70, 310, 120);
 
         dataConc.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        dataConc.setText("Data 1");
         getContentPane().add(dataConc);
-        dataConc.setBounds(10, 50, 320, 30);
+        dataConc.setBounds(10, 30, 320, 30);
 
         lblResultado.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         lblResultado.setText("0");
         getContentPane().add(lblResultado);
-        lblResultado.setBounds(180, 250, 100, 30);
+        lblResultado.setBounds(330, 210, 100, 30);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("Quantidade de acertos:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(10, 250, 180, 30);
+        jLabel3.setBounds(140, 210, 180, 30);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("Resultado:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(390, 80, 130, 19);
+        jLabel4.setBounds(390, 50, 130, 19);
+
+        jScrollPane2.setViewportView(jTextPane1);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(0, 280, 490, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -224,6 +234,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text1.getText())== teste1.get(i)) {
+                 text1.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -231,6 +242,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text2.getText())== teste1.get(i)) {
+                 text2.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -238,6 +250,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text3.getText())== teste1.get(i)) {
+                 text3.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -245,6 +258,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text4.getText())== teste1.get(i)) {
+                 text4.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -252,6 +266,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text5.getText())== teste1.get(i)) {
+                 text5.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -259,6 +274,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text6.getText())== teste1.get(i)) {
+                 text6.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -266,6 +282,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text7.getText())== teste1.get(i)) {
+                 text7.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -273,6 +290,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text8.getText())== teste1.get(i)) {
+                 text8.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -280,6 +298,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text9.getText())== teste1.get(i)) {
+                 text9.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -287,6 +306,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text10.getText())== teste1.get(i)) {
+                 text10.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -294,6 +314,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text11.getText())== teste1.get(i)) {
+                 text11.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -301,6 +322,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text12.getText())== teste1.get(i)) {
+                 text12.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -308,6 +330,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text13.getText())== teste1.get(i)) {
+                 text13.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -315,6 +338,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text14.getText())== teste1.get(i)) {
+                 text14.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -322,6 +346,7 @@ public class formview extends javax.swing.JFrame {
         for (int i = 0; i < 15; i++) {
             System.out.println("Número " + i + " é " + teste1.get(i));
             if (Long.parseLong(text15.getText())== teste1.get(i)) {
+                 text15.setBackground(Color.green);
                 contador++;
                 break;
             }
@@ -376,6 +401,8 @@ public class formview extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPane1;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JTextArea result;
     private javax.swing.JTextField text1;

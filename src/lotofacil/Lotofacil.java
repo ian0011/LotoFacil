@@ -21,6 +21,7 @@ public class Lotofacil {
     public String conc;
     public String result;
     public List<Long> resultList;
+    public String link;
     //public String 
 
     public void Loteria() {
@@ -40,7 +41,7 @@ public class Lotofacil {
             //Faz isso aqui = Lotofácil - Loterias | Caixa 
             //System.out.println(page.getTitleText());
             //Pega e exibe o link
-            //System.out.println(page.getUrl().toString());
+            link = ("Link para consulta: "+page.getUrl().toString());
 
             List<HtmlElement> spans = page.getBody().getElementsByAttribute("span", "class", "ng-binding");
             HtmlSpan concurso = (HtmlSpan) spans.get(0);
@@ -84,5 +85,8 @@ public class Lotofacil {
 
     public List<Long> pegaLista() {
         return resultList;
+    }
+    public String pegaLink(){
+        return link;
     }
 }
